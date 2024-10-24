@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-center">
+    <div class="flex justify-center items-center">
+        <p id="num">0</p>
+    </div>
+    <div>
+        <button id="btn" class="border p-[10px] bg-black text-white">Start</button>
+        <button id="sbtn" class="border p-[10px] bg-black text-white">Stop</button>
+        <button id="Res" class="border p-[10px] bg-black text-white">Reset</button>
+    </div>
+
+
+
+    <script>
+        const nums = document.getElementById("num");
+        const butt = document.getElementById("btn");
+        const btn = document.getElementById("sbtn");
+        const resetbtn = document.getElementById("Res");
+        let id;
+
+        butt.addEventListener("click",()=>{
+           id = setInterval(()=>{
+                nums.textContent= parseInt(nums.textContent) + 1;
+            },1000)
+            
+
+        })
+        btn.addEventListener("click",()=>{
+            clearInterval(id);
+
+        })
+
+        resetbtn.addEventListener("click",()=>{
+            nums.textContent = "0";
+        })
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
